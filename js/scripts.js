@@ -103,3 +103,44 @@ function topFunction() {
 	document.body.scrollTop = 0; // for Safari
 	document.documentElement.scrollTop = 0; // for Chrome, Firefox, IE and Opera
 }
+
+$(document).ready(function() {
+	$(".gallery").magnificPopup({
+		delegate: "a",
+		type: "image",
+		tLoading: "Loading image #%curr%...",
+		mainClass: "mfp-img-mobile",
+		gallery: {
+			enabled: true,
+			navigateByImgClick: true,
+			preload: [0, 1] // Will preload 0 - before current, and 1 after the current image
+		},
+		image: {
+			tError: '<a href="%url%">The image #%curr%</a> could not be loaded.'
+		}
+	});
+});
+
+
+// events
+let speakers = document.querySelectorAll('.speaker-circle img');
+
+if (speakers && speakers.length) {
+  speakers.forEach((speaker) => {
+    speaker.addEventListener('mouseenter', (event) => {
+      let target = event.target;
+      let name = target.dataset.name;
+      let role = target.dataset.role;
+      let speakerName = target.parentElement.parentElement.querySelector('.speaker-name');
+      let speakerRole = target.parentElement.parentElement.querySelector('.speaker-role');
+      speakerName.textContent = name;
+      speakerRole.textContent = role;
+      target.parentElement.parentElement.querySelectorAll('.speaker-circle').forEach(item => {
+        item.classList.remove('active');
+      });
+      target.parentElement.classList.add('active');
+    });
+  });
+}
+
+// end events

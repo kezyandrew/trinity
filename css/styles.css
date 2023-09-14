@@ -314,8 +314,8 @@ a:hover {
 }
 
 .navbar .logo-image img {
-    width: 124px;
-	height: 32px;
+    width: 80px;
+	height: 50px;
 }
 
 .navbar .logo-text {
@@ -1512,3 +1512,176 @@ a:hover {
 	
 }
 /* end of min-width 1400px */
+
+/* Gallery */
+/* Start Gallery CSS */
+.thumb {
+	margin-bottom: 15px;
+}
+.thumb:last-child {
+	margin-bottom: 0;
+}
+/* CSS Image Hover Effects: https://www.nxworld.net/tips/css-image-hover-effects.html */
+.thumb 
+figure img {
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+  -webkit-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
+}
+.thumb 
+figure:hover img {
+  -webkit-filter: grayscale(0);
+  filter: grayscale(0);
+}
+
+/* End of Gallery */
+
+/* carousel */
+.carousel-wrapper {
+	width: 520px;
+	height: 350px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	box-shadow: 5px 5px 25px 0px rgba(46, 61, 73, 0.2);
+	border-radius: 20px;
+	margin: 100px auto 20px;
+  }
+  
+  .carousel-container {
+	width: 400px;
+	height: 250px;
+	overflow: hidden;
+	margin: 0 auto;
+  }
+  
+  .carousel {
+	display: flex;
+	width: 1200px;
+	animation: sliding 12s infinite;
+  }
+  .carousel div {
+	width: 400px;
+	height: 250px;
+	background-size: cover;
+	background-position: center;
+  }
+  .carousel:hover {
+	animation-play-state: paused;
+  }
+  .carousel .image-one {
+	background-image: url("/images/pics/4.JPG");
+  }
+  .carousel .image-two {
+	background-image: url("/images/pics/11.JPG");
+  }
+  .carousel .image-three {
+	background-image: url("/images/pics/2.JPG");
+  }
+  
+  @keyframes sliding {
+	30% {
+	  transform: translateX(0);
+	}
+	35% {
+	  transform: translateX(-400px);
+	}
+	65% {
+	  transform: translateX(-400px);
+	}
+	70% {
+	  transform: translateX(-800px);
+	}
+	98% {
+	  transform: translateX(-800px);
+	}
+	100% {
+	  transform: translateX(0);
+	}
+  }
+  @media screen and (max-width: 768px) {
+	.carousel-wrapper {
+	  width: 312px;
+	  height: 210px;
+	}
+  
+	.carousel-container {
+	  width: 240px;
+	  height: 150px;
+	}
+  
+	.carousel {
+	  width: 720px;
+	}
+	.carousel > div {
+	  width: 240px;
+	  height: 150px;
+	}
+  
+	@keyframes sliding {
+	  30% {
+		transform: translateX(0);
+	  }
+	  35% {
+		transform: translateX(-240px);
+	  }
+	  65% {
+		transform: translateX(-240px);
+	  }
+	  70% {
+		transform: translateX(-480px);
+	  }
+	  98% {
+		transform: translateX(-480px);
+	  }
+	  100% {
+		transform: translateX(0);
+	  }
+	}
+  }
+/* carousel*/
+
+/* image */
+.gallery {
+	display: grid;
+	gap: 10px; 
+	grid-template-columns: auto 0 auto;
+	place-items: center;
+  }
+  .gallery > img {
+	width: 200px; /* control the size */
+	aspect-ratio: 1;
+	object-fit: cover;
+	transition: .35s;
+	/* filter: grayscale(); */
+	cursor: pointer;
+  }
+  .gallery > img:hover {
+	filter: grayscale(0%);
+  }
+  
+  .gallery > img:nth-child(1) {
+	clip-path: polygon(0 0,50% 0,100% 100%,0 100%);
+  }
+  .gallery > img:nth-child(2) {
+	clip-path: polygon(0 0,100% 0,50% 100%);
+  }
+  .gallery > img:nth-child(3) {
+	clip-path: polygon(50% 0,100% 0,100% 100%,0 100%);
+  }
+  .gallery > img:nth-child(4) {
+	clip-path: polygon(0 0,100% 0,50% 100%,0 100%);
+  }
+  .gallery > img:nth-child(5) {
+	clip-path: polygon(50% 0,100% 100%,0% 100%);
+  }
+  .gallery > img:nth-child(6) {
+	clip-path: polygon(0 0,100% 0,100% 100%,50% 100%);
+  }
+  
+  
+  
+  
+  
+/* end of image */
